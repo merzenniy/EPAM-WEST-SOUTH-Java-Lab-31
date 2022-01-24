@@ -8,10 +8,10 @@ import org.springframework.stereotype.Component;
 public class OtherBeanB {
     private BeanB beanB;
 
-@Autowired
-    public void setBeanB(BeanB beanB){
-    this.beanB = beanB;
-    System.out.println(this.getClass().getSimpleName()+ ". " + beanB.getClass().getSimpleName()+ " was injected through the setter");
-}
+    @Autowired
+    public void setBeanB(BeanB beanB) {
+        this.beanB = beanB;
+        System.out.println(this.getClass().getSimpleName() + ". " + beanB.getClass().getSimpleName() + " was injected through the setter");
+    }
 
 }
