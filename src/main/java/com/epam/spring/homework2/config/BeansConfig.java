@@ -5,8 +5,8 @@ import org.springframework.context.annotation.*;
 
 @Configuration
 @PropertySource("classpath:application.properties")
-@Import(ConfigB.class)
-public class ConfigA {
+@Import(OtherConfig.class)
+public class BeansConfig {
     @Bean
     public BeanA getBeanA() {
         return new BeanA();
