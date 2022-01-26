@@ -1,7 +1,9 @@
 package com.epam.spring.homework2.beans;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BeanC {
     @Value("${beanC.name}")
     private String name;
@@ -14,5 +16,13 @@ public class BeanC {
                 "name='" + name + '\'' +
                 ", value=" + value +
                 '}';
+    }
+
+    private void cInitMethod() {
+        System.out.println(this.getClass().getSimpleName() + " InitMetod");
+    }
+
+    private void cDestroyMethod() {
+        System.out.println(this.getClass().getSimpleName() + " Destroy method");
     }
 }
