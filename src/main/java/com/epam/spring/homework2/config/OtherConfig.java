@@ -1,15 +1,15 @@
 package com.epam.spring.homework2.config;
 
 import com.epam.spring.homework2.beans.CustomBeanFactoryPostProcessor;
-import com.epam.spring.homework2.beans.CustomBeanPostProcessor;
+import com.epam.spring.homework2.beans.ValidateFieldsAnnotationBeanPostProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class OtherConfig {
     @Bean
-    public CustomBeanPostProcessor customBeanPostProcessor() {
-        return new CustomBeanPostProcessor();
+    public ValidateFieldsAnnotationBeanPostProcessor validateFieldsAnnotationBeanPostProcessor() {
+        return new ValidateFieldsAnnotationBeanPostProcessor();
     }
 
     @Bean

@@ -1,13 +1,10 @@
 package com.epam.spring.homework2.beans;
 
-import com.epam.spring.homework2.validator.BeanValidator;
-import com.epam.spring.homework2.validator.impl.BeanValidatorImpl;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.stereotype.Component;
 
-@Component
-public class BeanA implements InitializingBean, DisposableBean, BeanValidator {
+@ValidateFields
+public class BeanA implements InitializingBean, DisposableBean{
     private String name;
     private int value;
 
@@ -30,9 +27,4 @@ public class BeanA implements InitializingBean, DisposableBean, BeanValidator {
     }
 
 
-    @Override
-    public void validate() {
-        System.out.println(this.getClass().getSimpleName() + ". validate method");
-        BeanValidatorImpl.validate(this.getClass().getSimpleName(), this.name, this.value);
-    }
 }

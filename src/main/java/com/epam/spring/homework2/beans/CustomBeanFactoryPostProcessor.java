@@ -9,7 +9,7 @@ public class CustomBeanFactoryPostProcessor implements BeanFactoryPostProcessor 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory configurableListableBeanFactory) throws BeansException {
         System.out.println("PostProcessBeanFactory");
-        BeanDefinition beanDefinition = configurableListableBeanFactory.getBeanDefinition("getBeanB");
+        BeanDefinition beanDefinition = configurableListableBeanFactory.getBeanDefinition("myBeanB");
         beanDefinition.setInitMethodName("bInitMethod");
     }
 }

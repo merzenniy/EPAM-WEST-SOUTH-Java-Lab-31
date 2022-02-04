@@ -10,6 +10,7 @@ public class Application {
         System.out.println("\n");
         for (String bean : context.getBeanDefinitionNames()) {
             System.out.println(context.getBean(bean));
+            System.out.println(context.getBeanDefinition(bean));
         }
 
         context.close();

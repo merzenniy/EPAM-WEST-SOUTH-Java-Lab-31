@@ -8,35 +8,35 @@ import org.springframework.context.annotation.*;
 @Import(OtherConfig.class)
 public class BeansConfig {
     @Bean
-    public BeanA getBeanA() {
+    public BeanA myBeanA() {
         return new BeanA();
     }
 
     @Bean(initMethod = "bInitMethod", destroyMethod = "bDestroyMethod")
-    @DependsOn("getBeanD")
-    public BeanB getBeanB() {
+    @DependsOn("myBeanD")
+    public BeanB myBeanB() {
         return new BeanB();
     }
 
     @Bean(initMethod = "cInitMethod", destroyMethod = "cDestroyMethod")
-    @DependsOn({"getBeanD", "getBeanB"})
-    public BeanC getBeanC() {
+    @DependsOn({"myBeanD", "myBeanB"})
+    public BeanC myBeanC() {
         return new BeanC();
     }
 
     @Bean(initMethod = "dInitMethod", destroyMethod = "dDestroyMethod")
-    public BeanD getBeanD() {
+    public BeanD myBeanD() {
         return new BeanD();
     }
 
     @Bean
-    public BeanE getBeanE() {
+    public BeanE myBeanE() {
         return new BeanE();
     }
 
     @Bean
     @Lazy
-    public BeanF getBeanF() {
+    public BeanF myBeanF() {
         return new BeanF();
     }
 }
