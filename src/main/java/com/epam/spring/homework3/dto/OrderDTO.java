@@ -5,13 +5,12 @@ import com.epam.spring.homework3.model.Dish;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.constraints.NotNull;
-
 import java.util.ArrayList;
 import java.util.Date;
 
 import static com.fasterxml.jackson.annotation.JsonProperty.Access.READ_ONLY;
 
-public class OrderDto {
+public class OrderDTO {
 
     @JsonProperty(access = READ_ONLY)
     private int id;
