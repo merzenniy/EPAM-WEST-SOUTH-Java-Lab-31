@@ -25,9 +25,9 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
-    public List<ClientDTO> clientsList() {
+    public List<ClientDTO> getClientsList() {
         log.info(this.getClass().getSimpleName() + ". Inside clientsList method");
-        return ClientMapper.INSTANCE.mapClientDTOs(clientRepository.clientsList());
+        return ClientMapper.INSTANCE.mapClientDTOs(clientRepository.getClientsList());
     }
 
     @Override

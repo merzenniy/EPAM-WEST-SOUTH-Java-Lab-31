@@ -7,7 +7,7 @@ import java.util.List;
 public interface DishRepository {
     Dish getDish(int id);
 
-    List<Dish> dishesList();
+    List<Dish> getDishesList();
 
     Dish createDish(Dish dish);
 

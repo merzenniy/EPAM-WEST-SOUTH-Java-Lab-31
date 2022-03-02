@@ -12,7 +12,6 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping("/api")
 @RequiredArgsConstructor
 public class ClientController {
     private final ClientService clientService;
@@ -25,10 +24,10 @@ public class ClientController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping(value = "/client")
+    @GetMapping(value = "/clients")
     public List<ClientDTO> getAllClients() {
         log.info(this.getClass().getSimpleName() + ". Inside getAllClients method");
-        return clientService.clientsList();
+        return clientService.getClientsList();
     }
 
     @ResponseStatus(HttpStatus.CREATED)

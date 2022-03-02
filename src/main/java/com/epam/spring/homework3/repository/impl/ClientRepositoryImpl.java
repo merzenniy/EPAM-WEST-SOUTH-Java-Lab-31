@@ -24,7 +24,7 @@ public class ClientRepositoryImpl implements ClientRepository {
     }
 
     @Override
-    public List<Client> clientsList() {
+    public List<Client> getClientsList() {
         log.info(this.getClass().getSimpleName() + ". Inside clientsList method");
         return new ArrayList<>(clients);
     }

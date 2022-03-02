@@ -26,9 +26,9 @@ public class DishServiceImpl implements DishService {
     }
 
     @Override
-    public List<DishDTO> dishesList() {
+    public List<DishDTO> getDishesList() {
         log.info(this.getClass().getSimpleName() + ". Inside dishesList method");
-        return DishMapper.INSTANCE.mapDishDTOs(dishRepository.dishesList());
+        return DishMapper.INSTANCE.mapDishDTOs(dishRepository.getDishesList());
     }
 
     @Override

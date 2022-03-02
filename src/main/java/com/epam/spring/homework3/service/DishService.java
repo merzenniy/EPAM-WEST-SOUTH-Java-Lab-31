@@ -8,7 +8,7 @@ public interface DishService {
 
     DishDTO getDish(int id);
 
-    List<DishDTO> dishesList();
+    List<DishDTO> getDishesList();
 
     DishDTO createDish(DishDTO dishDTO);
 

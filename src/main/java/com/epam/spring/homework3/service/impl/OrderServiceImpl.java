@@ -29,9 +29,9 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<OrderDTO> ordersList() {
+    public List<OrderDTO> getOrdersList() {
         log.info(this.getClass().getSimpleName() + ". Inside ordersList method");
-        return OrderMapper.INSTANCE.mapOrderDTOs(orderRepository.ordersList());
+        return OrderMapper.INSTANCE.mapOrderDTOs(orderRepository.getOrdersList());
     }
 
     @Override

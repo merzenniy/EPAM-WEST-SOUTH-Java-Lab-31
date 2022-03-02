@@ -13,7 +13,7 @@ import java.util.List;
 @Slf4j
 @Repository
 public class OrderRepositoryImpl implements OrderRepository {
-    private final List<Order> orders  = new ArrayList<>();
+    private final List<Order> orders = new ArrayList<>();
 
     @Override
     public Order getOrder(int id) {
@@ -21,10 +21,11 @@ public class OrderRepositoryImpl implements OrderRepository {
         return orders.stream()
                 .filter(client -> client.getId() == id)
                 .findFirst()
-                .orElseThrow(() -> new ItemNotFoundException("Can`t found order with id = " + id));    }
+                .orElseThrow(() -> new ItemNotFoundException("Can`t found order with id = " + id));
+    }
 
     @Override
-    public List<Order> ordersList() {
+    public List<Order> getOrdersList() {
         log.info(this.getClass().getSimpleName() + ". Inside ordersList method");
         return new ArrayList<>(orders);
     }
@@ -33,7 +34,8 @@ public class OrderRepositoryImpl implements OrderRepository {
     public Order createOrder(Order order) {
         log.info(this.getClass().getSimpleName() + ". Inside createOrder method");
         orders.add(order);
-        return order;    }
+        return order;
+    }
 
     @Override
     public Order updateOrder(int id, Order order) {
@@ -44,7 +46,8 @@ public class OrderRepositoryImpl implements OrderRepository {
         } else {
             throw new ItemNotFoundException("Order with given id does not exist");
         }
-        return order;    }
+        return order;
+    }
 
     @Override
     public void deleteOrder(int id) {

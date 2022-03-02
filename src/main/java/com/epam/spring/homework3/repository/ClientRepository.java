@@ -7,7 +7,7 @@ import java.util.List;
 public interface ClientRepository {
     Client getClient(int id);
 
-    List<Client> clientsList();
+    List<Client> getClientsList();
 
     Client createClient(Client client);
 

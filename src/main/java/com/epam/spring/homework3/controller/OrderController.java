@@ -1,8 +1,7 @@
 package com.epam.spring.homework3.controller;
 
-import com.epam.spring.homework3.dto.ClientDTO;
+
 import com.epam.spring.homework3.dto.OrderDTO;
-import com.epam.spring.homework3.service.ClientService;
 import com.epam.spring.homework3.service.OrderService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +13,6 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping("/api")
 @RequiredArgsConstructor
 public class OrderController {
     private final OrderService orderService;
@@ -27,10 +25,10 @@ public class OrderController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping(value = "/order")
+    @GetMapping(value = "/orders")
     public List<OrderDTO> getAllOrders() {
         log.info(this.getClass().getSimpleName() + ". Inside getAllOrders method");
-        return orderService.ordersList();
+        return orderService.getOrdersList();
     }
 
     @ResponseStatus(HttpStatus.CREATED)

@@ -24,7 +24,7 @@ public class DishRepositoryImpl implements DishRepository {
     }
 
     @Override
-    public List<Dish> dishesList() {
+    public List<Dish> getDishesList() {
         log.info(this.getClass().getSimpleName() + ". Inside dishesList method");
         return new ArrayList<>(dishes);
     }

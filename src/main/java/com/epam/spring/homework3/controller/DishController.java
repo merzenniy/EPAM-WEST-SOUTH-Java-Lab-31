@@ -14,7 +14,6 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping("/api")
 @RequiredArgsConstructor
 public class DishController {
     private final DishService dishService;
@@ -27,10 +26,10 @@ public class DishController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @GetMapping(value = "/dish")
+    @GetMapping(value = "/dishes")
     public List<DishDTO> getAllDishes(){
         log.info(this.getClass().getSimpleName() + ". Inside getAllDishes method");
-        return dishService.dishesList();
+        return dishService.getDishesList();
     }
 
     @ResponseStatus(HttpStatus.CREATED)
